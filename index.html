@@ -3,31 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Live Streaming</title>
-    <link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
-    <script src="https://unpkg.com/video.js/dist/video.js"></script>
+    <title>Live Streaming 24/7</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.14.3/video-js.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.14.3/video.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls/5.15.0/videojs-contrib-hls.min.js"></script>
     <style>
         body {
-            background-color: #000;
             margin: 0;
+            background-color: black;
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
             height: 100vh;
         }
         video {
             width: 90%;
             max-width: 1200px;
-            height: auto;
         }
     </style>
 </head>
 <body>
+
     <video id="live-stream" class="video-js vjs-default-skin" controls autoplay>
-        <source src="https://livepush.io/embed/emkXAHvY-h1XzCsd_" type="application/x-mpegURL">
+        <source src="https://livepush.io/embed/emkAXHVY-h1xZCsd_.m3u8" type="application/x-mpegURL">
+        Il tuo browser non supporta la riproduzione del video.
     </video>
+
     <script>
-        var player = videojs('live-stream');
+        var player = videojs('live-stream', {
+            controls: true,
+            autoplay: true,
+            preload: 'auto'
+        });
     </script>
+
 </body>
 </html>
